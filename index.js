@@ -52,7 +52,7 @@ export class UpdateAPK {
     if (outdated) {
       if (remote.forceUpdate) {
         if (this.options.forceUpdateApp) {
-          this.options.forceUpdateApp();
+          this.options.forceUpdateApp(remote);
         }
         this.downloadApk(remote);
       } else if (this.options.needUpdateApp) {
@@ -63,7 +63,7 @@ export class UpdateAPK {
         });
       }
     } else if (this.options.notNeedUpdateApp) {
-      this.options.notNeedUpdateApp();
+      this.options.notNeedUpdateApp(remote);
     }
   };
 
